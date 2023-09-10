@@ -58,3 +58,11 @@ meta_arr = np.array(meta_close_price)
 tsla_close_price = [238.5899963379, 238.8200073242, 257.1799926758, 256.8999938965, 258.0799865723,
  245.0099945068, 256.4899902344, 251.9199981689, 251.4900054932, 248.5]
 tsla_arr = np.array(tsla_close_price)
+
+
+fig, aapl_ax = plt.subplots()
+aapl_ax.set_ylabel('Closing Price')
+aapl_ax.set_title('Apple (AAPL) Closing Price Last 10 Trading Days (2023/08/25 - 2023/09/09)')
+aapl_ax.grid(True)
+aapl_ax.plot([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], aapl_arr)
+plt.show()
