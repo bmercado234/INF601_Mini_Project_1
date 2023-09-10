@@ -9,6 +9,13 @@ import pprint
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import shutil, os
+from pathlib import Path
+
+if not os.path.exists('charts'):
+	os.makedirs('charts')
+
+
 
 url = "https://yfinance-stock-market-data.p.rapidapi.com/price-customdate"
 
@@ -65,4 +72,5 @@ aapl_ax.set_ylabel('Closing Price')
 aapl_ax.set_title('Apple (AAPL) Closing Price Last 10 Trading Days (2023/08/25 - 2023/09/09)')
 aapl_ax.grid(True)
 aapl_ax.plot([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], aapl_arr)
-plt.show()
+plt.savefig('aapl_fig')
+shutil.move('aapl_fig.png', 'charts')
